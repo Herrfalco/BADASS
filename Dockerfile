@@ -6,7 +6,7 @@ ADD https://raw.githubusercontent.com/Herrfalco/BADASS/main/P1/host_fcadet_apito
 FROM frrouting/frr AS router
 RUN apk update && apk upgrade
 
-ADD https://raw.githubusercontent.com/Herrfalco/BADASS/main/Utils/deamons.conf /etc/frr/daemons
+ADD https://raw.githubusercontent.com/Herrfalco/BADASS/main/Utils/daemons.conf /etc/frr/daemons
 
 ADD https://raw.githubusercontent.com/Herrfalco/BADASS/main/P1/router_fcadet_apitoise.sh /P1.sh
 
