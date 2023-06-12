@@ -1,21 +1,23 @@
 FROM alpine AS host
 RUN apk update && apk upgrade
 
-#COPY utils/ip_config.sh ip_config.sh
-#COPY utils/P3_ip_conf.sh P3_ip_conf.sh
+ADD https://raw.githubusercontent.com/Herrfalco/BADASS/main/P1/host_fcadet_apitoise.sh /P1.sh
 
 FROM frrouting/frr AS router
 RUN apk update && apk upgrade
 
-ENTRYPOINT /usr/lib/frr/frrinit.sh start && tail -f /dev/null
+ADD https://raw.githubusercontent.com/Herrfalco/BADASS/main/Utils/deamons.conf /etc/frr/daemons
 
-#	rm -rf /etc/frr/daemons
+ADD https://raw.githubusercontent.com/Herrfalco/BADASS/main/P1/router_fcadet_apitoise.sh /P1.sh
 
-#COPY utils/daemons /etc/frr/daemons
-#COPY utils/vtysh.conf /etc/frr/vtysh.conf
-#COPY utils/start.sh start.sh
+#ADD https://raw.githubusercontent.com/Herrfalco/BADASS/main/Utils/vtysh.conf /etc/frr/vtysh.conf
+
+#ENTRYPOINT /usr/lib/frr/frrinit.sh start && tail -f /dev/null
 
 # For P2
+
+#COPY utils/ip_config.sh ip_config.sh
+#COPY utils/P3_ip_conf.sh P3_ip_conf.sh
 
 #COPY utils/static_vxlan.sh static_vxlan.sh
 #COPY utils/dyn_vxlan.sh dyn_vxlan.sh
