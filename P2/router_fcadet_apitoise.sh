@@ -8,7 +8,7 @@ VXLAN_CONF=$(if [$1 = "multi"]
 ip addr add 10.1.1.$THIS/24 dev eth0
 
 #create vxlan between 10.1.1.X
-ip link add name vxlan10
+ip link add name vxlan10 \
 	type vxlan \
 	id 10 \
 	dev eth0 \
