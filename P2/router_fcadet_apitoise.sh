@@ -1,9 +1,6 @@
 THIS=$(echo $HOSTNAME | tr -dc '0-9')
-OTHER=$(if [ $THIS = "1" ]; then echo 2; else echo 1; fi;)
-
-echo $1 >> log.txt
-
-VXLAN_CONF=$(if [$1 = multi]
+OTHER=$(if [ "$THIS" = "1" ]; then echo 2; else echo 1; fi;)
+VXLAN_CONF=$(if [ "$1" = "multi" ]
 	then echo group 239.1.1.1;
 	else echo remote 10.1.1.$OTHER local 10.1.1.$THIS; fi)
 
