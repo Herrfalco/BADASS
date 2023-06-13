@@ -1,14 +1,19 @@
+######################################## HOST ###############################################
 FROM alpine AS host
 RUN apk update && apk upgrade
 
 ADD https://raw.githubusercontent.com/Herrfalco/BADASS/main/P1/host_fcadet_apitoise.sh /P1.sh
+ADD https://raw.githubusercontent.com/Herrfalco/BADASS/main/P2/host_fcadet_apitoise.sh /P2.sh
+
+####################################### ROUTER ##############################################
 
 FROM frrouting/frr AS router
 RUN apk update && apk upgrade
 
 ADD https://raw.githubusercontent.com/Herrfalco/BADASS/main/Utils/daemons.conf /etc/frr/daemons
-
 ADD https://raw.githubusercontent.com/Herrfalco/BADASS/main/P1/router_fcadet_apitoise.sh /P1.sh
+
+#############################################################################################
 
 #ADD https://raw.githubusercontent.com/Herrfalco/BADASS/main/Utils/vtysh.conf /etc/frr/vtysh.conf
 
