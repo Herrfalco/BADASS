@@ -4,8 +4,6 @@ VXLAN_CONF=$(if [ "$1" = "multi" ]
 	then echo group 239.1.1.1;
 	else echo remote 10.1.1.$OTHER local 10.1.1.$THIS; fi)
 
-echo $VXLAN_CONF >> log.txt
-
 #setup ip address 10.1.1.X on eth0
 ip addr add 10.1.1.$THIS/24 dev eth0
 
