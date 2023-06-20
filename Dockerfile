@@ -12,25 +12,7 @@ FROM frrouting/frr AS router
 ADD https://raw.githubusercontent.com/Herrfalco/BADASS/main/Utils/daemons.conf /etc/frr/daemons
 ADD https://raw.githubusercontent.com/Herrfalco/BADASS/main/P1/router_fcadet_apitoise.sh /P1.sh
 ADD https://raw.githubusercontent.com/Herrfalco/BADASS/main/P2/router_fcadet_apitoise.sh /P2.sh
-ADD https://raw.githubusercontent.com/Herrfalco/BADASS/main/P3/router_fcadet_apitoise.sh /P3.sh
+ADD https://raw.githubusercontent.com/Herrfalco/BADASS/main/P3/spine_fcadet_apitoise.sh /P3_spine.sh
+ADD https://raw.githubusercontent.com/Herrfalco/BADASS/main/P3/leaf_fcadet_apitoise.sh /P3_leaf.sh
 
 #############################################################################################
-
-#ADD https://raw.githubusercontent.com/Herrfalco/BADASS/main/Utils/vtysh.conf /etc/frr/vtysh.conf
-
-#ENTRYPOINT /usr/lib/frr/frrinit.sh start && tail -f /dev/null
-
-# For P2
-
-#COPY utils/ip_config.sh ip_config.sh
-#COPY utils/P3_ip_conf.sh P3_ip_conf.sh
-
-#COPY utils/static_vxlan.sh static_vxlan.sh
-#COPY utils/dyn_vxlan.sh dyn_vxlan.sh
-
-# For P3
-
-#COPY utils/rr_conf.sh rr_conf.sh
-#COPY utils/leaf_conf.sh leaf_conf.sh
-
-# Start Project
