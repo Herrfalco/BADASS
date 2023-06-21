@@ -27,6 +27,9 @@ ip address $LEAFNB.$LEAFNB.$LEAFNB.$LEAFNB/32
 ip ospf area 0
 exit
 !
+router ospf
+exit
+!
 end" > /etc/frr/frr.conf
 
 #start routing daemons

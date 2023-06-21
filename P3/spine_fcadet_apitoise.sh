@@ -22,6 +22,10 @@ interface lo
 ip address 4.4.4.4/32
 exit
 !
+router ospf
+network 10.1.0.0/16 area 0
+exit
+!
 end" > /etc/frr/frr.conf
 
 #start routing daemons
