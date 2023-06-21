@@ -27,7 +27,7 @@ ip address $LEAFNB.$LEAFNB.$LEAFNB.$LEAFNB/32
 ip ospf area 0
 exit
 !
-end" > /etc/frr/vtysh.conf
+end" > /etc/frr/frr.conf
 
 #start routing daemons
 /usr/lib/frr/frrinit.sh start

@@ -22,7 +22,7 @@ interface lo
 ip address 4.4.4.4/32
 exit
 !
-end" > /etc/frr/vtysh.conf
+end" > /etc/frr/frr.conf
 
 #start routing daemons
 /usr/lib/frr/frrinit.sh start
