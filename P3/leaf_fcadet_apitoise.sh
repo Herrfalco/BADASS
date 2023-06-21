@@ -10,10 +10,7 @@ ip link set dev br0 up
 brctl addif br0 eth0
 brctl addif br0 vxlan10
 
-#start routing daemons
-/usr/lib/frr/frrinit.sh start
-
-CONFIG="!
+echo "!
 !
 frr version 8.4_git
 frr defaults traditional
@@ -30,8 +27,9 @@ ip address $LEAFNB.$LEAFNB.$LEAFNB.$LEAFNB/32
 ip ospf area 0
 exit
 !
-end"
+end" > /etc/frr/vtysh.conf
 
-echo "$CONFIG" | vtysh
+#start routing daemons
+/usr/lib/frr/frrinit.sh start
 
 tail -f /dev/null

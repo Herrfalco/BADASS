@@ -1,7 +1,4 @@
-#start routing daemons
-/usr/lib/frr/frrinit.sh start
-
-CONFIG="!
+echo "!
 !
 frr version 8.4_git
 frr defaults traditional
@@ -25,8 +22,9 @@ interface lo
 ip address 4.4.4.4/32
 exit
 !
-end"
+end" > /etc/frr/vtysh.conf
 
-echo "$CONFIG" | vtysh
+#start routing daemons
+/usr/lib/frr/frrinit.sh start
 
 tail -f /dev/null
