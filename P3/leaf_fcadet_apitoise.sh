@@ -26,7 +26,7 @@ ip ospf area 0
 exit
 !
 interface lo
-ip address 1.1.1.$LEAFNB/32
+ip address $LEAFNB.$LEAFNB.$LEAFNB.$LEAFNB/32
 ip ospf area 0
 exit
 !
